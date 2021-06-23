@@ -1,5 +1,10 @@
 import React from 'react';
+import {Background} from './src/components/Background';
 import {SignIn} from './src/screens/SignIn';
 export default function App() {
-  return <SignIn />;
+  return (
+    <Background>
+      <SignIn />
+    </Background>
+  );
 }
