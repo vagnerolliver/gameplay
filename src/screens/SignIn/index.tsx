@@ -1,10 +1,18 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
-import {ButtonIcon} from '../../components/ButtonIcon';
-import {styles} from './styles';
+import { View, Image, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import { styles } from './styles';
+import { ButtonIcon } from '../../components/ButtonIcon';
 import Illustration from '../../assets/illustration.png';
 
 export function SignIn() {
+  const navigation = useNavigation();
+
+  function handleSignIn() {
+    navigation.navigate('Home');
+  }
+
   return (
     <View style={styles.container}>
       <Image source={Illustration} style={styles.image} resizeMode="stretch" />
@@ -19,7 +27,7 @@ export function SignIn() {
           favoritos com seu amigos
         </Text>
 
-        <ButtonIcon title="Entrar com o Discord" activeOpacity={0.7} />
+        <ButtonIcon title="Entrar com o Discord" onPress={handleSignIn} />
       </View>
     </View>
   );
