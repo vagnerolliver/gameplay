@@ -5,4 +5,11 @@ export const theme = {
     primary: '#E51C44',
     line: '#991F36',
   },
+
+  fonts: {
+    title700: 'Rajdhani-Bold',
+    title500: 'Rajdhani-Medium',
+    text400: 'Inter-Regular',
+    text500: 'Inter-Medium',
+  },
 };
