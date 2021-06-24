@@ -45,6 +45,71 @@ export function Home() {
       description:
         'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
     },
+    {
+      id: '3',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true,
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description:
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
+    },
+    {
+      id: '4',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true,
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description:
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
+    },
+    {
+      id: '5',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true,
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description:
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
+    },
+    {
+      id: '6',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true,
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description:
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
+    },
+    {
+      id: '7',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true,
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description:
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
+    },
   ];
 
   function handleCategorySelect(categoryId: string) {
@@ -71,9 +136,7 @@ export function Home() {
         setCategory={handleCategorySelect}
       />
 
-      <View style={styles.content}>
-        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-      </View>
+      <ListHeader title="Partidas agendadas" subtitle="Total 6" />
 
       <FlatList
         data={appointments}
@@ -82,6 +145,7 @@ export function Home() {
           <Appointment data={item} onPress={handleAppointmentDetails} />
         )}
         ItemSeparatorComponent={() => <ListDivider />}
+        contentContainerStyle={{ paddingBottom: 69 }}
         style={styles.matches}
         showsVerticalScrollIndicator={false}
       />

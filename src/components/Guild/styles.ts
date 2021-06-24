@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   content: {
+    marginLeft: 20,
     flex: 1,
     justifyContent: 'center',
   },
@@ -16,12 +17,11 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.title700,
     color: theme.colors.heading,
     fontSize: 18,
-    marginBottom: 11,
+    marginBottom: 4,
   },
   type: {
     fontFamily: theme.fonts.text400,
     color: theme.colors.highlight,
     fontSize: 13,
-    marginBottom: 24,
   },
 });
