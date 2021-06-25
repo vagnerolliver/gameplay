@@ -8,13 +8,11 @@ import React,
 
 import * as AuthSession from 'expo-auth-session';
 
-import {
-  SCOPE,
-  CLIENT_ID,
-  CDN_IMAGE,
-  REDIRECT_URI,
-  RESPONSE_TYPE,
-} from '../configs';
+const { SCOPE } = process.env;
+const { CLIENT_ID } = process.env;
+const { CDN_IMAGE } = process.env;
+const { REDIRECT_URI } = process.env;
+const { RESPONSE_TYPE } = process.env;
 
 import { api } from '../services/api';
 
@@ -53,11 +51,10 @@ function AuthProvider({ children }: AuthProviderProps) {
     try {
       setLoading(true);
 
-     // const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
-
-     const authUrl = 'https://discord.com/api/oauth2/authorize?client_id=857993478231556126&redirect_uri=mycoolredirect%3A%2F%2Fsome%2Fredirect&response_type=code&scope=identify%20email%20connections%20guilds';
-      const response = await AuthSession.startAsync({ authUrl }) as AuthorizationResponse;
-      console.log('response', response);
+     const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+      console.log('authUrl',authUrl);
+     //const response = await AuthSession.startAsync({ authUrl }) as AuthorizationResponse;
+     //console.log('response', response);
       if (type === 'success'){
          // api.defaults.headers.authorization = `Bearer ${params.access_token}`;
 
@@ -77,6 +74,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         setLoading(false);
       }
     } catch (error) {
+      setLoading(false);
       throw new Error(`Não foi possível autenticar: ${error}`);
     }
   }
